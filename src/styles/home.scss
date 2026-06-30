@@ -1,0 +1,372 @@
+@use './variables.module.scss' as *;
+@use './mixins' as *;
+
+.highlight {
+    color: $originalFontColor;
+    font-weight: 500;
+}
+
+.hm {
+    height: auto;
+    width: 100%;
+    background-color: $mainColor;
+    @include flex(center, center, row);
+
+    .main-cnt {
+        height: 100vh;
+        width: 70vmax;
+        background-color: $mainColor;
+        @include borderTest;
+        @include flex(center, center, row);
+
+        .hero-cont {
+            height: 30vmax;
+            width: 80%;
+            padding-top: 5vmax;
+            @include borderTest;
+            @include flex(center, center, column);
+
+            .name {
+                font-size: 2.9vmax;
+                color: $originalFontColor;
+                font-weight: 400;
+                line-height: 1vmax;
+            }
+
+            .prf {
+                font-size: 3vmax;
+                color: $fancyFontColor;
+                font-weight: 500;
+                line-height: 5.5vmax;
+            }
+
+            .brief {
+                font-size: 1vmax;
+                text-align: center;
+                width: 35vmax;
+                color: $darkFontColor;
+            }
+
+            // -----------------------
+
+            .btn-cnt {
+                height: 4vmax;
+                width: 100%;
+                @include borderTest;
+                margin: 1.5vmax 0;
+                padding: 0 4vmax;
+                @include flex(center, center, row);
+                gap: .5vmax;
+
+                @include mobile {
+                    height: 12vmax;
+                    padding: 0 2vmax
+                }
+
+                .linkedin {
+                    @include socialIcons('../assets/icons/linkedin.webp', 1.7vmax);
+
+                    @include mobile {
+                        @include socialIcons('../assets/icons/linkedin.webp', 4.7vmax);
+                    }
+                }
+
+                .long {
+                    // position: relative;
+                    @include flex(center, space-between, row);
+                    color: $darkFontColor;
+                    text-decoration: none;
+                    font-size: .9vmax;
+                    @include longButton();
+                    padding: .5vmax 1vmax;
+                    transition: 0.2s;
+
+                    @include mobile {
+                        height: 7vmax;
+                        width: 7vmax;
+                        justify-content: center;
+                    }
+                }
+
+                .wrap {
+                    height: auto;
+                    width: auto;
+                    @include flex(center, space-between, row);
+                    gap: .2vmax;
+                }
+
+                .btn-txt {
+                    @include mobile {
+                        display: none;
+                    }
+                }
+
+                .arrow {
+                    @include arrow();
+                }
+
+                .long:hover {
+                    background-color: $hovercolorDark;
+                    border: 1px solid $hovercolorDark;
+
+                    .arrow {
+                        transform: rotateZ(45deg);
+                    }
+                }
+
+                .short {
+                    @include shortButton();
+                    @include flex(center, center, row);
+                    transition: 0.2s;
+
+                    @include mobile {
+                        height: 7vmax;
+                        width: 7vmax;
+                    }
+                }
+
+                .short:hover {
+                    background-color: $hovercolorDark;
+                    border: 1px solid $hovercolorDark;
+                }
+
+                .github {
+                    @include socialIcons('../assets/icons/github.webp', 1.5vmax);
+
+                    @include mobile {
+                        @include socialIcons('../assets/icons/github.webp', 4.5vmax);
+                    }
+                }
+
+                .instagram {
+                    @include socialIcons('../assets/icons/instagram.webp', 1.7vmax);
+
+                    @include mobile {
+                        @include socialIcons('../assets/icons/instagram.webp', 4.7vmax);
+                    }
+                }
+
+                .fiverr {
+                    @include socialIcons('../assets/icons/fiverr.webp', 1.6vmax);
+
+                    @include mobile {
+                        @include socialIcons('../assets/icons/fiverr.webp', 4.6vmax);
+                    }
+                }
+
+                .upwork {
+                    @include socialIcons('../assets/icons/upwork.webp', 1.6vmax);
+
+                    @include mobile {
+                        @include socialIcons('../assets/icons/upwork.webp', 4.6vmax);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hs {
+    height: auto;
+    width: 100%;
+    background-color: $mainColor;
+    @include flex(center, center, row);
+
+    .s-cnt {
+        height: 60vh;
+        width: 70vmax;
+        background-color: $mainColor;
+        @include borderTest;
+        @include flex(center, center, row);
+
+        .s-cont {
+            height: auto;
+            width: 48%;
+            @include borderTest;
+            @include flex(flex-start, flex-start, column);
+            gap: 1vmax;
+
+            .s-head {
+                font-size: 1.5vmax;
+                font-weight: 400;
+                margin: 2vmax 0;
+                color: $fancyFontColor;
+            }
+
+            .s-brief {
+                font-size: 1vmax;
+                line-height: 1.3vmax;
+                color: $darkFontColor;
+            }
+
+            .resume {
+                // position: relative;
+                @include flex(center, space-between, row);
+                color: $fontColorSecondary;
+                text-decoration: none;
+                font-family: 'Arimo';
+                font-size: .9vmax;
+                @include longButton();
+                padding: .5vmax 1vmax;
+                transition: 0.2s;
+
+                .wrap {
+                    height: auto;
+                    width: auto;
+                    @include flex(center, space-between, row);
+                    gap: .2vmax;
+                }
+
+                .resumeico {
+                    @include socialIcons('../assets/icons/resume.png', 1.7vmax);
+                }
+
+                .arrow {
+                    @include arrow();
+                }
+
+                &:hover{
+                    background-color: $hovercolorDark;
+                    border: 1px solid $hovercolorDark;
+
+                    .arrow {
+                        transform: rotateZ(45deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ts{
+    height: auto;
+    width: 100%;
+    background-color: $mainColor;
+    @include flex(center, center, row);
+
+    .t-cnt{
+        height: 70vh;
+        width: 70vmax;
+        background-color: $mainColor;
+        @include borderTest;
+        @include flex(center, center, row);
+
+        .t-cont{
+            height: auto;
+            width: auto;
+            @include borderTest;
+            @include flex(flex-start, center, column);
+
+            .t-head {
+                font-size: 1.5vmax;
+                font-weight: 400;
+                margin: 2vmax 0;
+                color: $fancyFontColor;
+            }
+        }
+    }
+}
+
+.fs{
+    height: auto;
+    width: 100%;
+    background-color: $mainColor;
+    @include flex(center, center, row);
+
+    .f-cnt{
+        height: 60vh;
+        width: 70vmax;
+        background-color: $mainColor;
+        @include borderTest;
+        @include flex(center, center, row);
+
+        .f-cont{
+            height: auto;
+            width: auto;
+            @include borderTest;
+            @include flex(start, center, column);
+            gap: 1vmax;
+
+            .f-head {
+                font-size: 1.5vmax;
+                font-weight: 400;
+                margin: 2vmax 0;
+                color: $fancyFontColor;
+            }
+        }
+    }
+}
+
+.ffs{
+    height: auto;
+    width: 100%;
+    background-color: $mainColor;
+    @include flex(center, center, row);
+
+    .ff-cnt{
+        padding: 2vmax 0;
+        height: auto;
+        width: 70vmax;
+        background-color: $mainColor;
+        @include borderTest;
+        @include flex(center, center, row);
+
+        .ff-cont{
+            height: auto;
+            width: 46%;
+            @include borderTest;
+            @include flex(left, center, row);
+            flex-wrap: wrap;
+            gap: 1vmax;
+
+            .ff-head {
+                font-size: 1.5vmax;
+                font-weight: 400;
+                margin: 2vmax 0;
+                text-align: left;
+                width: 100%;
+                color: $fancyFontColor;
+            }
+        }
+    }
+}
+
+.ss{
+    height: auto;
+    width: 100%;
+    background-color: $mainColor;
+    @include flex(center, center, row);
+
+    .ss-cnt{
+        padding: 2vmax 0;
+        height: auto;
+        width: 70vmax;
+        background-color: $mainColor;
+        @include borderTest;
+        @include flex(center, center, row);
+
+        .ss-cont{
+            height: auto;
+            width: 46%;
+            @include borderTest;
+            @include flex(left, center, row);
+            flex-wrap: wrap;
+            gap: 1vmax;
+
+            .ss-head {
+                font-size: 1.5vmax;
+                font-weight: 400;
+                margin: 2vmax 0;
+                text-align: left;
+                width: 100%;
+                color: $fancyFontColor;
+            }
+        }
+    }
+}
+
+.foot{
+    width: 100%;
+    background-color: $mainColor;
+    @include flex(center, center, column);
+}

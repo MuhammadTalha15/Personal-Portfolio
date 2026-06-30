@@ -1,0 +1,58 @@
+@use './mixins' as *;
+@use './variables.module.scss' as *;
+
+$long-width: 32vmax;
+$short-width: 15.4vmax;
+
+.stackbtnlong{
+    width: $long-width;
+}
+
+.stackbtnshort{
+    width: $short-width;
+}
+
+.stackbtnlong, .stackbtnshort{
+    height: auto;
+    border: 1px solid $colorDark;
+    border-radius: .5vmax;
+    text-decoration: none;
+    padding: .8vmax 1vmax;
+    @include flex(center, space-between, row);
+
+    .text-cnt {
+        height: 2.8vmax;
+        width: 80%;
+        @include flex(start, center, column);
+        gap: .1vmax;
+
+        .techHead {
+            font-size: 1vmax;
+            color: $fontColorPri;
+            font-weight: 500;
+        }
+
+        .techDescription {
+            font-size: .8vmax;
+            color: $fontColorSecondary;
+            font-family: 'Arimo';
+            font-weight: 500;
+        }
+
+    }
+
+    .arrow {
+        @include arrow();
+    }
+
+    transition: 0.2s;
+    
+}
+
+.stackbtnlong:hover, .stackbtnshort:hover {
+    background-color: $hovercolorDark;
+    border: 1px solid $hovercolorDark;
+    .arrow {
+        transform: rotateZ(45deg);
+    }
+}

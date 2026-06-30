@@ -1,0 +1,39 @@
+@use './mixins' as *;
+@use './variables.module.scss' as *;
+
+$footer: #8f8f8f;
+
+.ftr{
+    height: 20vmax;
+    width: 40vmax;
+    // border: 1px solid white;
+    @include flex(center, center, column);
+    gap: 2vmax;
+
+    .outroText{
+        font-size: .9vmax;
+        width: 23vmax;
+        text-align: center;
+        color: $footer;
+        font-family: 'Arimo';
+    }
+
+    .footerLink{
+        display: block;
+        height: 2vmax;
+        width: 20vmax;
+        // filter: invert(70%) sepia(0%) saturate(4617%) hue-rotate(339deg) brightness(92%) contrast(68%);
+        background-image: url(../assets/icons/nameSign.webp);
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .cpywriteText{
+        width: 10vmax;
+        text-align: center;
+        font-size: .8vmax;
+        color: $footer;
+        font-family: 'Arimo';
+    }
+}

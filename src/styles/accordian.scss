@@ -1,0 +1,53 @@
+@import './mixins';
+@import './variables.module.scss';
+
+.item {
+    height: auto;
+    width: 32vmax;
+    border-bottom: 1px solid $colorDark;
+    padding: 1.5vmax .2vmax;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.title {
+    @include flex(center, space-between, row)
+}
+
+.arrow {
+    @include arrow();
+}
+
+.arrowActive {
+    @include arrow();
+    transform: rotateZ(135deg);
+}
+
+
+.ttl {
+    font-family: 'Arimo';
+    font-weight: 300;
+    font-size: 1.1vmax;
+    color: $originalFontColor;
+}
+
+.accordCont {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.2s linear;
+
+}
+
+.accordCont.show {
+    height: auto;
+    max-height: 7vmax;
+    transition: 0.2s linear;
+    color: $fontColorSecondary;
+    padding-top: 1vmax;
+}
+
+.cntnt {
+    font-family: 'Arimo';
+    font-weight: 400;
+    font-size: .9vmax;
+}

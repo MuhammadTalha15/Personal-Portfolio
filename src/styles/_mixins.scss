@@ -1,0 +1,76 @@
+@use './variables.module.scss' as *;
+
+@mixin borderTest(){
+    border: 1px solid transparent;
+}
+
+@mixin flex($item, $justify, $direc) {
+    display: flex;
+    align-items: $item;
+    justify-content: $justify;
+    flex-direction: $direc;
+}
+
+@mixin heroBackground(){
+    height: auto;
+    width: 100%;
+    background-color: $backgroundColor;
+    // background-image: linear-gradient(rgba(21, 21, 21, 0.7), rgba(21, 21, 21, 0.7)),url('../assets/img/heroback.jpg');
+    background-size: 20%;
+    background-position: top left;
+    background-attachment: fixed;
+    @include flex(center, center, column);
+}
+
+@mixin borderStyle() {
+    border-radius: 7px;
+    border: 1px solid $colorDark;
+}
+
+@mixin shortButton() {
+    height: 2.5vmax;
+    width: 2.5vmax;
+    @include borderStyle();
+}
+
+@mixin longButton() {
+    height: 2.5vmax;
+    width: 20vmax;
+    @include borderStyle();
+}
+
+@mixin socialIcons($url, $dim) {
+    display: inline-flex;
+    height: $dim;
+    width: $dim;
+    background-image: url($url);
+    background-position: center;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: cover;
+    // filter: invert(70%) sepia(0%) saturate(4617%) hue-rotate(339deg) brightness(92%) contrast(68%);
+}
+
+@mixin arrow() {
+    display: block;
+    height: 1vmax;
+    width: 1vmax;
+    background-image: url(../assets/icons/arrow.png);
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: cover;
+    // filter: invert(70%) sepia(0%) saturate(4617%) hue-rotate(339deg) brightness(92%) contrast(68%);
+    // transform: rotateZ(-45deg); 
+    transition: 0.2s;
+    // z-index: 10;
+
+    @include mobile {
+        display: none;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
