@@ -1,5 +1,5 @@
-@import './mixins';
-@import './variables.module.scss';
+@use './mixins' as *;
+@use './variables.module.scss' as *;
 
 .item {
     height: auto;

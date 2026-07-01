@@ -1,0 +1,48 @@
+@use './mixins' as *;
+@use './variables.module.scss' as *;
+
+.hdr{
+    position: fixed;
+    height: 4vmax;
+    width: 100%;
+    background-color: $mainColor;
+    @include flex(center, center, row);
+
+    .navbar{
+        height: 3vmax;
+        width: 30vmax;
+        // background-color: purple;
+        @include flex(center, center, row);
+        gap: 2vmax;
+
+        .navLink{
+            position: relative;
+            color: $originalFontColor;
+            text-decoration: none;
+            font-size: 1.1vmax;
+            padding: .3vmax .2vmax;
+            @include borderTest;
+            
+            &::before{
+                position: absolute;
+                content: '';
+                height: 3px;
+                width: 0%;
+                background-color: $fancyFontColor;
+                left: 0;
+                bottom: -7px;
+                transition: 0.3s;
+            }
+
+            &:hover::before{
+                position: absolute;
+                content: '';
+                height: 3px;
+                width: 100%;
+                background-color: $fancyFontColor;
+                left: 0;
+                bottom: -7px;
+            }
+        }
+    }
+}

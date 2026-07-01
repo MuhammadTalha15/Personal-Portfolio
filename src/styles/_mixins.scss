@@ -2,6 +2,7 @@
 
 @mixin borderTest(){
     border: 1px solid transparent;
+    // border: 1px solid white;
 }
 
 @mixin flex($item, $justify, $direc) {

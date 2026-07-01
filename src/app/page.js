@@ -4,6 +4,7 @@ import Link from "next/link";
 import Accordian from '@/components/Accord'
 import { ButtonShort, ButtonLong } from '@/components/stackButton'
 import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar';
 
 import { Orbitron } from 'next/font/google';
 import { Arimo } from 'next/font/google';
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <main>
+        <Navbar/>
         <section className="hm">
           <section className="main-cnt">
             <div className="hero-cont">
