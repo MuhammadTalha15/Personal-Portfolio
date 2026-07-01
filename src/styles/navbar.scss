@@ -3,6 +3,7 @@
 
 .hdr{
     position: fixed;
+    z-index: 1000;
     height: 4vmax;
     width: 100%;
     background-color: $mainColor;
@@ -28,7 +29,7 @@
                 content: '';
                 height: 3px;
                 width: 0%;
-                background-color: $fancyFontColor;
+                background-color: $originalFontColor;
                 left: 0;
                 bottom: -7px;
                 transition: 0.3s;
@@ -39,7 +40,7 @@
                 content: '';
                 height: 3px;
                 width: 100%;
-                background-color: $fancyFontColor;
+                background-color: $originalFontColor;
                 left: 0;
                 bottom: -7px;
             }

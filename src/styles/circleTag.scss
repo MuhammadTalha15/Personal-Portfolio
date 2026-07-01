@@ -1,0 +1,32 @@
+@use './mixins' as *;
+@use './variables.module.scss' as *;
+
+.circle{
+    // position: absolute;
+    order: 2;
+    right: 20vmax;
+    bottom: 0%;
+    height: 12vmax;
+    width: 12vmax;
+    // background-color: red;
+    z-index: 100;
+    object-fit: fill;
+    animation: rotate 22s linear infinite;
+    border-radius: 50%;
+
+    .circleImg{
+        object-fit: contain;
+        height: 12vmax;
+        width: 12vmax;
+    }
+
+    @keyframes rotate {
+        to{
+            transform: rotateZ(0deg);
+        }
+
+        from{
+            transform: rotateZ(360deg);
+        }
+    }
+}

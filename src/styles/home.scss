@@ -1,12 +1,17 @@
 @use './variables.module.scss' as *;
 @use './mixins' as *;
 
+main{
+    overflow-x: hidden;
+}
+
 .highlight {
     color: $originalFontColor;
     font-weight: 500;
 }
 
 .hm {
+    
     height: auto;
     width: 100%;
     background-color: $mainColor;
@@ -167,6 +172,7 @@
 }
 
 .hs {
+    position: relative;
     height: auto;
     width: 100%;
     background-color: $mainColor;
@@ -178,6 +184,7 @@
         background-color: $mainColor;
         @include borderTest;
         @include flex(center, center, row);
+        gap: 3vmax;
 
         .s-cont {
             height: auto;
@@ -185,6 +192,7 @@
             @include borderTest;
             @include flex(flex-start, flex-start, column);
             gap: 1vmax;
+            order: 1;
 
             .s-head {
                 font-size: 1.5vmax;

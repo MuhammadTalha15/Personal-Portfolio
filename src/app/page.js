@@ -8,6 +8,7 @@ import Navbar from '@/components/Navbar';
 
 import { Orbitron } from 'next/font/google';
 import { Arimo } from 'next/font/google';
+import Circle from '@/components/circleTag';
 
 const Orbit = Orbitron({ subsets: ['latin']});
 const Arim = Arimo({ subsets: ['latin']});
@@ -17,6 +18,7 @@ export default function Home() {
     <>
       <main>
         <Navbar/>
+        
         <section className="hm">
           <section className="main-cnt">
             <div className="hero-cont">
@@ -40,6 +42,7 @@ export default function Home() {
 
         <section className="hs">
           <section className="s-cnt">
+          <Circle/> 
             <div className="s-cont">
               <h2 className={`${Orbit.className} + s-head`}>Few Words About Me</h2>
               <p className={`${Arim.className} + s-brief`}>
@@ -86,10 +89,10 @@ export default function Home() {
               <ButtonLong urlLink="#" techName="Burp-Suit Community Edition" techDes="Web Application Penetration Testing Tool" />
               <ButtonShort urlLink="#" techName="Wire-Shark" techDes="Network Packet Sniffer" />
               <ButtonShort urlLink="#" techName="Kali Linux" techDes="Linux Distro for Pentesting" />
-              <ButtonLong urlLink="#" techName="Metasploit Framework" techDes="Open-source Penetration Testing Framework used for Pentesting Targets" />
+              <ButtonLong urlLink="#" techName="Nmap" techDes="High speed Network Reconnaissance and Scanning Tool" />
               <ButtonShort urlLink="#" techName="Bash-Script" techDes="Linux Shell Automation" />
               <ButtonShort urlLink="#" techName="Python" techDes="Scripting and Automation" />
-              <ButtonLong urlLink="#" techName="Nmap" techDes="High speed Network Reconnaissance and Scanning Tool" />
+              <ButtonLong urlLink="#" techName="Metasploit Framework" techDes="Open source Penetration Testing Framework for Pen-Test Targets" />
               
             </section>
           </section>
